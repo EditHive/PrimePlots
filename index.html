@@ -13,22 +13,23 @@
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(to bottom, #f5f8fc, #e8edff);
-      color: #333;
+      background: linear-gradient(to bottom, #0a0a0a, #1a1a2e);
+      color: #e0e0e0;
       overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: linear-gradient(90deg, #1a1a2e, #16213e);
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 60px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 2px solid #0f3460;
     }
 
     header h1 {
@@ -50,7 +51,7 @@
     }
 
     .hero {
-      background: linear-gradient(rgba(0, 0, 80, 0.4), rgba(0, 0, 80, 0.4)),
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                   url('https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
       height: 500px;
       color: white;
@@ -75,27 +76,30 @@
 
     .search-bar {
       margin-top: 25px;
-      background: rgba(255,255,255,0.95);
+      background: rgba(22, 33, 62, 0.95);
       padding: 15px 20px;
       border-radius: 12px;
       display: flex;
       gap: 10px;
       width: 80%;
       max-width: 800px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       animation: fadeIn 1.5s ease;
+      border: 1px solid #0f3460;
     }
 
     .search-bar input, .search-bar select {
       flex: 1;
       padding: 12px;
-      border: 1px solid #ccc;
+      border: 1px solid #0f3460;
       border-radius: 8px;
       font-size: 15px;
+      background: #1a1a2e;
+      color: #e0e0e0;
     }
 
     .search-bar button {
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: linear-gradient(90deg, #0f3460, #e94560);
       color: white;
       border: none;
       border-radius: 8px;
@@ -111,18 +115,19 @@
 
     .section {
       padding: 70px 80px;
-      background: white;
+      background: #16213e;
       margin: 40px auto;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
       max-width: 1200px;
       animation: fadeInUp 1s ease;
+      border: 1px solid #0f3460;
     }
 
     .section h2 {
       text-align: center;
       margin-bottom: 40px;
-      color: #004aad;
+      color: #e94560;
       font-size: 28px;
       position: relative;
     }
@@ -132,7 +137,7 @@
       display: block;
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: linear-gradient(90deg, #0f3460, #e94560);
       margin: 10px auto;
       border-radius: 2px;
     }
@@ -145,17 +150,19 @@
     }
 
     .property-card {
-      background: #fff;
+      background: #1a1a2e;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
       overflow: hidden;
       width: 300px;
       transition: all 0.3s ease;
+      border: 1px solid #0f3460;
     }
 
     .property-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3);
+      border-color: #e94560;
     }
 
     .property-card img {
@@ -171,13 +178,14 @@
 
     .property-card h3 {
       margin: 0;
-      color: #004aad;
+      color: #e94560;
       font-size: 18px;
     }
 
     .property-card p {
       margin: 8px 0;
       font-size: 15px;
+      color: #e0e0e0;
     }
 
     /* Location Classification Section */
@@ -206,7 +214,7 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
-      filter: brightness(0.8);
+      filter: brightness(0.6);
     }
 
     .city-card span {
@@ -229,14 +237,16 @@
 
     form input, form select, form textarea {
       padding: 12px;
-      border: 1px solid #ccc;
+      border: 1px solid #0f3460;
       border-radius: 8px;
       font-size: 15px;
       width: 100%;
+      background: #1a1a2e;
+      color: #e0e0e0;
     }
 
     form button {
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: linear-gradient(90deg, #0f3460, #e94560);
       color: white;
       border: none;
       padding: 12px;
@@ -251,12 +261,13 @@
     }
 
     footer {
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: linear-gradient(90deg, #1a1a2e, #16213e);
       color: white;
       text-align: center;
       padding: 25px;
       margin-top: 60px;
       font-size: 15px;
+      border-top: 2px solid #0f3460;
     }
 
     @keyframes fadeInUp {
@@ -370,6 +381,20 @@
         <div class="info">
           <h3>3 BHK Flat, Pune</h3>
           <p>₹ 70 Lakhs • 1100 sq.ft</p>
+        </div>
+      </div>
+      <div class="property-card">
+        <img src="prop2.webp">
+        <div class="info">
+          <h3>2 BHK Flat, Pune</h3>
+          <p>₹ 50 Lakhs • 1000 sq.ft</p>
+        </div>
+      </div>
+      <div class="property-card">
+        <img src="prop1.webp">
+        <div class="info">
+          <h3>3 BHK Flat, Hyderabad</h3>
+          <p>₹ 90 Lakhs • 2100 sq.ft</p>
         </div>
       </div>
     </div>
