@@ -3,8 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>99acres Clone</title>
+  <title>PrimePlots</title>
   <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+header {
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid #2a2a2a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav a {
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+nav a:hover {
+  color: #ff6b35;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: #ff6b35;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.section {
+  padding: 70px 80px;
+  background: #1a1a1a;
+  margin: 40px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  max-width: 1200px;
+  border: 1px solid #2a2a2a;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ff6b35;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff6b35;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+
     * {
       margin: 0;
       padding: 0;
@@ -13,44 +107,74 @@
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(to bottom, #f5f8fc, #e8edff);
-      color: #333;
+      background: #0f0f0f;
+      color: #e0e0e0;
       overflow-x: hidden;
     }
 
+
     header {
-      background: linear-gradient(90deg, #004aad, #0070f3);
-      color: white;
+      position: sticky;
+      top: 0;
+      background: #1a1a1a;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 60px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 20px 60px;
+      z-index: 1000;
+      border-bottom: 1px solid #2a2a2a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     header h1 {
-      font-size: 26px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #ff6b35;
       margin: 0;
       letter-spacing: 1px;
     }
 
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
     nav a {
-      color: white;
+      color: #888;
       text-decoration: none;
-      margin-left: 20px;
       font-weight: 500;
-      transition: opacity 0.3s ease;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: #ff6b35;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     nav a:hover {
-      opacity: 0.8;
+      color: #ff6b35;
     }
 
     .hero {
-      background: linear-gradient(rgba(0, 0, 80, 0.4), rgba(0, 0, 80, 0.4)),
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                   url('https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
       height: 500px;
       color: white;
@@ -75,65 +199,79 @@
 
     .search-bar {
       margin-top: 25px;
-      background: rgba(255,255,255,0.95);
+      background: #1a1a1a;
       padding: 15px 20px;
-      border-radius: 12px;
+      border-radius: 16px;
       display: flex;
       gap: 10px;
       width: 80%;
       max-width: 800px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      animation: fadeIn 1.5s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 1s ease 0.3s both;
+      border: 1px solid #2a2a2a;
     }
 
     .search-bar input, .search-bar select {
       flex: 1;
       padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
       font-size: 15px;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      transition: all 0.3s ease;
+    }
+
+    .search-bar input:focus, .search-bar select:focus {
+      outline: none;
+      border-color: #ff6b35;
+      background: #1a1a1a;
+      box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
     }
 
     .search-bar button {
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: #ff6b35;
       color: white;
       border: none;
-      border-radius: 8px;
-      padding: 12px 25px;
+      border-radius: 10px;
+      padding: 12px 30px;
       font-weight: 600;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .search-bar button:hover {
-      transform: scale(1.05);
+      background: #e55a2b;
+      transform: translateY(-2px);
     }
 
     .section {
       padding: 70px 80px;
-      background: white;
+      background: #1a1a1a;
       margin: 40px auto;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
       max-width: 1200px;
       animation: fadeInUp 1s ease;
+      border: 1px solid #2a2a2a;
     }
 
     .section h2 {
       text-align: center;
       margin-bottom: 40px;
-      color: #004aad;
-      font-size: 28px;
+      color: #ff6b35;
+      font-size: 32px;
       position: relative;
+      font-weight: 700;
     }
 
     .section h2::after {
       content: '';
       display: block;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #004aad, #0070f3);
-      margin: 10px auto;
+      width: 80px;
+      height: 4px;
+      background: #ff6b35;
+      margin: 15px auto;
       border-radius: 2px;
     }
 
@@ -145,23 +283,38 @@
     }
 
     .property-card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: #1a1a1a;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
       overflow: hidden;
       width: 300px;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid #2a2a2a;
+      animation: fadeInUp 0.6s ease backwards;
     }
 
+    .property-card:nth-child(1) { animation-delay: 0.1s; }
+    .property-card:nth-child(2) { animation-delay: 0.2s; }
+    .property-card:nth-child(3) { animation-delay: 0.3s; }
+    .property-card:nth-child(4) { animation-delay: 0.4s; }
+    .property-card:nth-child(5) { animation-delay: 0.5s; }
+    .property-card:nth-child(6) { animation-delay: 0.6s; }
+
     .property-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+      border-color: #ff6b35;
     }
 
     .property-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .property-card:hover img {
+      transform: scale(1.1);
     }
 
     .property-card .info {
@@ -171,16 +324,18 @@
 
     .property-card h3 {
       margin: 0;
-      color: #004aad;
+      color: #ff6b35;
       font-size: 18px;
+      font-weight: 600;
     }
 
     .property-card p {
       margin: 8px 0;
       font-size: 15px;
+      color: #e0e0e0;
     }
 
-    /* Location Classification Section */
+
     .cities {
       display: flex;
       justify-content: space-around;
@@ -191,22 +346,32 @@
 
     .city-card {
       width: 250px;
-      border-radius: 15px;
+      border-radius: 20px;
       overflow: hidden;
       position: relative;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      border: 1px solid #2a2a2a;
     }
 
     .city-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(255, 107, 53, 0.5);
+      border-color: #ff6b35;
     }
 
     .city-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      filter: brightness(0.8);
+      filter: brightness(0.7);
+      transition: all 0.3s ease;
+    }
+
+    .city-card:hover img {
+      filter: brightness(1);
+      transform: scale(1.05);
     }
 
     .city-card span {
@@ -217,6 +382,14 @@
       font-size: 20px;
       font-weight: 600;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+
+    .city-card:hover span {
+      bottom: 20px;
+      left: 20px;
+      font-size: 22px;
+      text-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
     }
 
     form {
@@ -228,35 +401,48 @@
     }
 
     form input, form select, form textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 14px;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
       font-size: 15px;
       width: 100%;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      border-color: #ff6b35;
+      background: #1a1a1a;
+      box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+      transform: translateY(-2px);
     }
 
     form button {
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: #ff6b35;
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 8px;
+      padding: 14px;
+      border-radius: 12px;
       font-weight: bold;
       cursor: pointer;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     form button:hover {
-      opacity: 0.9;
+      background: #e55a2b;
+      transform: translateY(-3px);
     }
 
     footer {
-      background: linear-gradient(90deg, #004aad, #0070f3);
+      background: #1a1a1a;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 30px;
       margin-top: 60px;
       font-size: 15px;
+      border-top: 1px solid #2a2a2a;
     }
 
     @keyframes fadeInUp {
@@ -270,8 +456,8 @@
     }
 
     @media (max-width: 800px) {
-      header { flex-direction: column; text-align: center; padding: 20px; }
-      nav a { display: inline-block; margin: 10px; }
+      header { flex-direction: column; padding: 20px; gap: 15px; }
+      nav { gap: 20px; flex-wrap: wrap; justify-content: center; }
       .listings, .cities { flex-direction: column; align-items: center; }
       .property-card, .city-card { width: 90%; }
       .search-bar { flex-direction: column; }
@@ -284,11 +470,11 @@
   <header>
     <h1>PrimePlots</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#cities">Locations</a>
-      <a href="#listings">Buy</a>
-      <a href="#add-property">Add Property</a>
-      <a href="#contact">Contact</a>
+      <a href="#home">Home </a>
+      <a href="cities.html" target="_blank">Locations </a>
+      <a href="buy.html">Buy</a>
+      <a href="add_property.html">Add Property</a>
+      <a href="">Contact</a>
     </nav>
   </header>
 
@@ -311,85 +497,7 @@
     </div>
   </section>
 
-  <section class="section" id="cities">
-    <h2>Explore by Location</h2>
-    <div class="cities">
-      <div class="city-card">
-        <img src="mum.webp">
-        <span>Mumbai</span>
-      </div>
-      <div class="city-card">
-        <img src="delhi.webp">
-        <span>Delhi</span>
-      </div>
-      <div class="city-card">
-        <img src="bang.avif" alt="Bangalore">
-        <span>Bangalore</span>
-      </div>
-      <div class="city-card">
-        <img src="pune.jpg" alt="Pune">
-        <span>Pune</span>
-      </div>
-      <div class="city-card">
-        <img src="chennai.jpg" alt="Chennai">
-        <span>Chennai</span>
-      </div>
-      <div class="city-card">
-      <img src="hy.jpg" alt="Hyderabad">
-      <span>Hyderabad</span>
-    </div>
-    </div>
-  </section>
-
-  <section class="section" id="listings">
-    <h2>Featured Properties</h2>
-    <div class="listings">
-      <div class="property-card">
-        <img src="prop 2.jpg">
-        <div class="info">
-          <h3>2 BHK Apartment, Mumbai</h3>
-          <p>₹ 85 Lakhs • 900 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80">
-        <div class="info">
-          <h3>3 BHK Villa, Bangalore</h3>
-          <p>₹ 1.2 Cr • 1500 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80">
-        <div class="info">
-          <h3>1 BHK Studio, Delhi</h3>
-          <p>₹ 45 Lakhs • 650 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80">
-        <div class="info">
-          <h3>3 BHK Flat, Pune</h3>
-          <p>₹ 70 Lakhs • 1100 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="prop2.webp">
-        <div class="info">
-          <h3>2 BHK Flat, Pune</h3>
-          <p>₹ 50 Lakhs • 1000 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="prop1.webp">
-        <div class="info">
-          <h3>3 BHK Flat, Hyderabad</h3>
-          <p>₹ 90 Lakhs • 2100 sq.ft</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="add-property">
+  <!-- <section class="section" id="add-property">
     <h2>Add Your Property</h2>
     <form>
       <input type="text" placeholder="Owner Name" required>
@@ -407,10 +515,6 @@
       <textarea rows="4" placeholder="Property Description"></textarea>
       <button type="submit">Submit Property</button>
     </form>
-  </section>
-
-  <footer id="contact">
-    <p>© 2025 99acres Clone | Built with ❤️ using HTML & CSS</p>
-  </footer>
+  </section> -->
 </body>
 </html>

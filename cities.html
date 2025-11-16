@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrimePlots - Locations</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid #2a2a2a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ff6b35;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #888;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 0;
+    }
+
+    nav a:hover {
+      color: #ff6b35;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: #ff6b35;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .section {
+      padding: 70px 80px;
+      background: #1a1a1a;
+      margin: 40px auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      max-width: 1200px;
+      border: 1px solid #2a2a2a;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #ff6b35;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #ff6b35;
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+
+    .cities {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 25px;
+      text-align: center;
+    }
+
+    .city-card {
+      width: 250px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      border: 1px solid #2a2a2a;
+    }
+
+    .city-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(255, 107, 53, 0.5);
+      border-color: #ff6b35;
+    }
+
+    .city-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      filter: brightness(0.7);
+      transition: all 0.3s ease;
+    }
+
+    .city-card:hover img {
+      filter: brightness(1);
+      transform: scale(1.05);
+    }
+
+    .city-card span {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+
+    .city-card:hover span {
+      bottom: 20px;
+      left: 20px;
+      font-size: 22px;
+      text-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>PrimePlots</h1>
+    <nav>
+      <!-- <a href="index.html">🏠 Home</a> -->
+      <a href="cities.html">📍 Locations</a>
+      <!-- <a href="listings.html">🏢 Buy</a>
+      <a href="add-property.html">➕ Add Property</a>
+      <a href="contact.html">📧 Contact</a> -->
+    </nav>
+  </header>
+
+  <section class="section" id="cities" target="_blank">
+    <h2>Explore by Location</h2>
+
+    <div class="cities">
+      <div class="city-card">
+        <img src="mum.webp" alt="Mumbai">
+        <span>Mumbai</span>
+      </div>
+
+      <div class="city-card">
+        <img src="delhi.webp" alt="Delhi">
+        <span>Delhi</span>
+      </div>
+
+      <div class="city-card">
+        <img src="bang.avif" alt="Bangalore">
+        <span>Bangalore</span>
+      </div>
+
+      <div class="city-card">
+        <img src="pune.jpg" alt="Pune">
+        <span>Pune</span>
+      </div>
+
+      <div class="city-card">
+        <img src="chennai.jpg" alt="Chennai">
+        <span>Chennai</span>
+      </div>
+
+      <div class="city-card">
+        <img src="hy.jpg" alt="Hyderabad">
+        <span>Hyderabad</span>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
