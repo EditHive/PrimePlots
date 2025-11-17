@@ -6,6 +6,100 @@
   <title>PrimePlots</title>
   <style>
     * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+header {
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid #2a2a2a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav a {
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+nav a:hover {
+  color: #ff6b35;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: #ff6b35;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.section {
+  padding: 70px 80px;
+  background: #1a1a1a;
+  margin: 40px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  max-width: 1200px;
+  border: 1px solid #2a2a2a;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ff6b35;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ff6b35;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -81,7 +175,7 @@
 
     .hero {
     position: relative;
-    height: 500px;
+    height: 750px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -253,7 +347,7 @@
       color: #e0e0e0;
     }
 
-    /* Location Classification Section */
+
     .cities {
       display: flex;
       justify-content: space-around;
@@ -388,22 +482,22 @@
   <header>
     <h1>PrimePlots</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#cities">Locations</a>
-      <a href="#listings">Buy</a>
-      <a href="#add-property">Add Property</a>
-      <a href="#contact">Contact</a>
+      <a href="#home">Home </a>
+      <a href="cities.html">Locations </a>
+      <a href="buy.html">Buy</a>
+      <a href="add_property.html">Add Property</a>
+      <a href="">Contact</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="https://res.cloudinary.com/dbeua7krf/video/upload/v1763317748/CINEMATIC_REAL_ESTATE_VIDEO_MODERN_LUXURY_SONY_FX3_DJI_MAVIC_3_PRO_-_Eric_Davidson_1080p_h264_leldpe.mp4" type="video/mp4">
+  <video autoplay loop playsinline class="bg-video">
+    <source src="video.mov" type="video/mp4">
   </video>
 
   <h2>Find Your Perfect Home</h2>
   <p>Search from thousands of properties across India</p>
-
+  
   <div class="search-bar">
     <input type="text" placeholder="Enter city, area or project name">
     <select>
@@ -420,85 +514,8 @@
   </div>
 </section>
 
-  <section class="section" id="cities">
-    <h2>Explore by Location</h2>
-    <div class="cities">
-      <div class="city-card">
-        <img src="mum.webp">
-        <span>Mumbai</span>
-      </div>
-      <div class="city-card">
-        <img src="delhi.webp">
-        <span>Delhi</span>
-      </div>
-      <div class="city-card">
-        <img src="bang.avif" alt="Bangalore">
-        <span>Bangalore</span>
-      </div>
-      <div class="city-card">
-        <img src="pune.jpg" alt="Pune">
-        <span>Pune</span>
-      </div>
-      <div class="city-card">
-        <img src="chennai.jpg" alt="Chennai">
-        <span>Chennai</span>
-      </div>
-      <div class="city-card">
-      <img src="hy.jpg" alt="Hyderabad">
-      <span>Hyderabad</span>
-    </div>
-    </div>
-  </section>
 
-  <section class="section" id="listings">
-    <h2>Featured Properties</h2>
-    <div class="listings">
-      <div class="property-card">
-        <img src="prop 2.jpg">
-        <div class="info">
-          <h3>2 BHK Apartment, Mumbai</h3>
-          <p>₹ 85 Lakhs • 900 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80">
-        <div class="info">
-          <h3>3 BHK Villa, Bangalore</h3>
-          <p>₹ 1.2 Cr • 1500 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80">
-        <div class="info">
-          <h3>1 BHK Studio, Delhi</h3>
-          <p>₹ 45 Lakhs • 650 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80">
-        <div class="info">
-          <h3>3 BHK Flat, Pune</h3>
-          <p>₹ 70 Lakhs • 1100 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="prop2.webp">
-        <div class="info">
-          <h3>2 BHK Flat, Pune</h3>
-          <p>₹ 50 Lakhs • 1000 sq.ft</p>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="prop1.webp">
-        <div class="info">
-          <h3>3 BHK Flat, Hyderabad</h3>
-          <p>₹ 90 Lakhs • 2100 sq.ft</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="add-property">
+  <!-- <section class="section" id="add-property">
     <h2>Add Your Property</h2>
     <form>
       <input type="text" placeholder="Owner Name" required>
@@ -516,7 +533,6 @@
       <textarea rows="4" placeholder="Property Description"></textarea>
       <button type="submit">Submit Property</button>
     </form>
-  </section>
-
+  </section> -->
 </body>
 </html>
