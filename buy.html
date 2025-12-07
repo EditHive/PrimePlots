@@ -121,6 +121,48 @@
       font-size: 15px;
       color: #e0e0e0;
     }
+    .btn{
+      width: 100%;
+      display: flex;
+      justify-content:center;
+      margin-top: 30px;
+    }
+    .loan{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 100px;
+    }
+    .loan input{
+      width: 30vw;
+      height: 5vh;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: rgba(255,0, 0, 0.35) 0px 5px 15px;
+      color: #fff;
+    }
+    #but{
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .para{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .result{
+      color: white;
+      display: flex;
+      justify-content: center;
+      box-shadow: rgba(255,0, 0, 0.35) 0px 5px 15px;
+    }
   </style>
 </head>
 
@@ -129,11 +171,9 @@
   <header>
     <h1>PrimePlots</h1>
     <nav>
-      <!-- <a href="index.html">🏠 Home</a>
-      <a href="cities.html">📍 Locations</a> -->
-      <a href="buy.html">🏢 Buy</a>
-      <!-- <a href="add-property.html">➕ Add Property</a>
-      <a href="contact.html">📧 Contact</a> -->
+
+      <a href="buy.html">Buy</a>
+      
     </nav>
   </header>
 
@@ -191,7 +231,21 @@
       </div>
 
     </div>
+    <div class="loan">
+    <input class="principal" type="text" placeholder="Principal">
+    <input class="rate" type="text" placeholder="Annual Interest Rate">
+    <input class="time" type="text" placeholder="Years">
+  
+    </div>
+    <div class="btn">
+    <button id="but">Calculate</button>
+    </div>
+    <div class="para">
+    <p class="result"></p>
+    </div>
   </section>
 
+
+<script src="script.js"></script>
 </body>
 </html>
